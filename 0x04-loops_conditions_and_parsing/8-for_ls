@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# special list of all files in a directory
+# split using -
+
+list="$(ls)" # this assigns all the names of files in the dir to the var list
+# loop through items in the var list
+for f in $list; do
+	# print to stdout each item in the var list after splitting with -
+	echo "$f" | cut -d "-" -f2
+done
