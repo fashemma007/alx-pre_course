@@ -6,6 +6,7 @@ while [[ $n -le $END ]]; do
 	if (("$n" != "9")); then
 		echo "Best School"
 	else
+		echo "Best School"
 		echo "Hi"
 	fi
 
