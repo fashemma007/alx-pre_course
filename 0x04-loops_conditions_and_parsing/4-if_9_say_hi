@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
-END=11
+END=10
 n=1
-while [[ $n -ne $END ]]; do
+while [[ $n -le $END ]]; do
 	if (("$n" != "9")); then
 		echo "Best School"
 	else
