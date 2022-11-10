@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
-END=9
+END=10
 n=0
 until [[ $n -eq $END ]]; do
 	echo "Best School"
