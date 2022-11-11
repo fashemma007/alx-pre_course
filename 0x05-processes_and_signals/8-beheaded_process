@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script kills another script running in another terminal forcibly
+# (KILL): to kill a process
+# (-f): find the process ID of ...
+pkill -KILL -f "7-highlander"
