@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# script to parse file for IP and HTTP fields using awk
+
+file="apache-access.log"
+# IP is column 1, HTTP is column 9
+# so we use $1 and $9 to xtract the IP and HTTP fields
+awk '{print $1, $9}' $file
