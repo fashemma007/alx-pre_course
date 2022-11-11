@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Read file and manipulate fields to generate story
+
+# IFS=":" Sets the internal field separator to :
+# `read` readings from stdin; -r option reads it raw
+# i.e. disabling backslashes
+
+# after spliting with : it assigns the values to
+# "user, pw, uid, gid, uinfo, homedir & shell" respectively
+
+FILE="/etc/passwd"
+
+while IFS=":" read -r user pw uid gid uinfo homedir shell; do
+    echo "The user $user is part of the $gid gang, lives in $homedir and \
+rides $shell. $uid's place is protected by the passcode $pw, \
+more info about the user here: $uinfo"
+done <"$FILE" # FILE is passed to the command
