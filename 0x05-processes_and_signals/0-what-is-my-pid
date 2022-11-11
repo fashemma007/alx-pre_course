@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Bash script to display PID
+
+# In bash, the PID of a shell script's subshell process
+# is stored in a special variable called $$
+echo $$
