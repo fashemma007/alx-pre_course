@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# parse log for IP and HTTP
+# calculate and put num occurences up front; order from greatest to least
+
+file="apache-access.log"
+# IP is column 1, HTTP is column 9
+# so we use $1 and $9 to xtract the IP and HTTP fields
+# sort - sort lines of text files| -n : numeric sort | -r: reversed
+# uniq - report or omit repeated lines
+# -c (--count )prefix lines by the number of occurrences
+awk '{print $1, $9}' $file | sort | uniq -c | sort -nr
