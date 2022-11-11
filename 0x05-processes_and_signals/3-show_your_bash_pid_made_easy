@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# display bash PID
+# look up a signal, or wait for processes based on name and other attributes
+# (-l): List the process name as well as the process ID
+pgrep -l bash
