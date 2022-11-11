@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# ps - report a snapshot of the current processes
+# (a): display all processes
+# (u): This selects the processes whose effective user name or
+# ID is in userlist [user-oriented]
+# (x): w/wo TTY
+# (f): show heirachy
+
+ps -auxf
