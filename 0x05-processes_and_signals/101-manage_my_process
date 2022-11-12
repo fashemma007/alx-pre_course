@@ -22,7 +22,7 @@ stop)
 restart)
     echo "manage_my_process restarted"
     killLoop_n_rmFile
-    startLoop_n_createFile
+    start_n_createFile
     ;;
 *)
     echo "Usage: manage_my_process {start|stop|restart}"
