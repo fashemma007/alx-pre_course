@@ -14,10 +14,12 @@ killLoop_n_rmFile() {
 }
 case "$argv1" in
 start)
-    echo "manage_my_process started" start_n_createFile
+    echo "manage_my_process started"
+    start_n_createFile
     ;;
 stop)
-    echo "manage_my_process stopped" killLoop_n_rmFile
+    echo "manage_my_process stopped"
+    killLoop_n_rmFile
     ;;
 restart)
     echo "manage_my_process restarted"
