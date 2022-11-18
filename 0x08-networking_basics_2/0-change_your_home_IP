@@ -9,5 +9,5 @@
 #\t adds a tab and \n for newline
 
 cp /etc/hosts hosts.bkup # backing up the host file
-sed -i s/127.*$/127.0.0.2\\tlocalhost\\n8.8.8.8\\tfacebook.com/g hosts_tmp
+sed -i s/127.*$/127.0.0.2\\tlocalhost\\n8.8.8.8\\tfacebook.com/g hosts.bkup
 cp -f hosts.bkup /etc/hosts
