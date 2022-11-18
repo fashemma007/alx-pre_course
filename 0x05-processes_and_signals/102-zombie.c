@@ -3,11 +3,11 @@
 #include <stdlib.h>/*to call the exit function*/
 
 /**
- * infini_tea - creates an infinite loop
+ * infinite_while - creates an infinite loop
  * Return: 0
  */
 
-int infini_tea(void)
+int infinite_while(void)
 {
 	while (1) /*since we don't have bool by default, we use 1 as true*/
 	{
@@ -18,7 +18,7 @@ int infini_tea(void)
 }
 /**
  * main - creates 5 zombie processes
- * Return: infini_tea zombies
+ * Return: infinite_while zombies
  */
 int main(void)
 {
@@ -36,5 +36,5 @@ int main(void)
 			printf("Zombie Process created, PID: %d\n", zombiePID);
 		}
 	}
-	return (infini_tea());
+	return (infinite_while());
 }
