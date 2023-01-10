@@ -19,30 +19,75 @@ project description ...
 ## Tasks
 ### Mandatory Task
 
-#### [Task - 0](./file-name)
+#### [0. Use a private key](0-use_a_private_key)
 
-**Problem:**
+**Problem:** Write a Bash script that uses ssh to connect to your server using the private key `~/.ssh/school` with the user ubuntu.
 
-- [ ] [Task 0](./file-name)
+**Requirements:**
+* Only use ssh single-character flags
+* You cannot use -l
+* You do not need to handle the case of a private key protected by a passphrase
+```
+sylvain@ubuntu$ ./0-use_a_private_key
+ubuntu@server01:~$ exit
+Connection to 8.8.8.8 closed.
+sylvain@ubuntu$
+```
+
+- [x] [Task 0](0-use_a_private_key)
+
+#### [Task 1]()
+
+**Problem:** lorem ipsum
+
+**Requirements:**
+* lorem ipsum
+* lorem ipsum
+
+```
+code sample
+```
+- [ ] [Task 1]()
 
 #### [Task - 1](./filename)
 
-**Problem:**
+**Problem:** lorem ipsum
 
-- [ ] [Task 1](./file-name)
+**Requirements:**
+* lorem ipsum
+* lorem ipsum
+
+```
+code sample
+```
+- [ ] [Task 1]()
 
 ### Advanced Task
 
 #### [Task - 013](./filename)
-**Problem:**
+**Problem:** lorem ipsum
 
-- [ ] [Task 100](./file-name)
+**Requirements:**
+* lorem ipsum
+* lorem ipsum
+
+```
+code sample
+```
+- [ ] [Task 1]()
 
 #### [Task - 014](./filename)
 
-**Problem:**
+**Problem:** lorem ipsum
 
-- [ ] [Task 101](./file-name)
+**Requirements:**
+* lorem ipsum
+* lorem ipsum
+
+```
+code sample
+```
+- [ ] [Task 1]()
 
 ## What I learned from this project
 
