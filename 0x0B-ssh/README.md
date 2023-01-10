@@ -1,25 +1,23 @@
-# PROJECT NAME
+# 0x0B. SSH
 
 project description ...
+## Resources
+* [SSH Essentials](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys)
 
-- [PROJECT NAME](#project-name)
-	- [Task Preview](#task-preview)
-	- [Mandatory Task](#mandatory-task)
-		- [Task - 0](#task---0)
-		- [Task - 1](#task---1)
-	- [Advanced Task](#advanced-task)
-		- [Task - 013](#task---013)
-		- [Task - 014](#task---014)
-	- [What I learned from this project](#what-i-learned-from-this-project)
-	- [Author](#author)
-	- [Acknowledgements](#acknowledgements)
-	- [Credits](#credits)
-	- [Link to template](#link-to-template)
+## Project Overview
+- [Mandatory Task](#mandatory-task)
+	- [0. Use a private key](0-use_a_private_key)
+	- [1. Create an SSH key pair](1-create_ssh_key_pair)
+	- [2. Client configuration file]()
+- [Advanced Task](#advanced-task)
+	- Task - 013
+	- Task - 014
+
 
 ## Tasks
 ### Mandatory Task
 
-#### [0. Use a private key](0-use_a_private_key)
+#### 0. Use a private key
 
 **Problem:** Write a Bash script that uses ssh to connect to your server using the private key `~/.ssh/school` with the user ubuntu.
 
@@ -28,15 +26,46 @@ project description ...
 * You cannot use -l
 * You do not need to handle the case of a private key protected by a passphrase
 ```
-sylvain@ubuntu$ ./0-use_a_private_key
-ubuntu@server01:~$ exit
-Connection to 8.8.8.8 closed.
-sylvain@ubuntu$
+imitor＠excalibur»alx-system_engineering-devops/0x0B-ssh(master)➜ ./0-use_a_private_key 
+ubuntu@74003-web-01:~$ exit
+logout
+Connection to 54.167.187.57 closed.
+imitor＠excalibur»alx-system_engineering-devops/0x0B-ssh(master)➜  
 ```
 
-- [x] [Task 0](0-use_a_private_key)
+- [x] [0-use_a_private_key](0-use_a_private_key)
 
-#### [Task 1]()
+#### 1. Create an SSH key pair
+**Problem:** Write a Bash script that creates an RSA key pair.
+
+**Requirements:**
+* Name of the created private key must be school
+* Number of bits in the created key to be created 4096
+* The created key must be protected by the passphrase betty
+```
+imitor＠excalibur»alx-system_engineering-devops/0x0B-ssh(master)➜ ./1-create_ssh_key_pair                                   (↻ 20?⇡2)
+Generating public/private rsa key pair.
+Your identification has been saved in school
+Your public key has been saved in school.pub
+The key fingerprint is:
+SHA256:eFRogXlABwvGWENv05rEy6LCtOoLIMzgWVE2TVk9Hdo imitor@excalibur
+The key's randomart image is:
++---[RSA 4096]----+
+|   *B=**=+o ...  |
+|  ..+=+*+. oo.   |
+|.  .  Boo  ..E   |
+|= o  + B         |
+|o*  . * S        |
+|= .. . .         |
+|oo.              |
+|o.               |
+|oo.              |
++----[SHA256]-----+
+imitor＠excalibur»alx-system_engineering-devops/0x0B-ssh(master)➜   
+```
+- [x] [1-create_ssh_key_pair](1-create_ssh_key_pair)
+
+#### Task - 1
 
 **Problem:** lorem ipsum
 
@@ -47,20 +76,7 @@ sylvain@ubuntu$
 ```
 code sample
 ```
-- [ ] [Task 1]()
-
-#### [Task - 1](./filename)
-
-**Problem:** lorem ipsum
-
-**Requirements:**
-* lorem ipsum
-* lorem ipsum
-
-```
-code sample
-```
-- [ ] [Task 1]()
+- [ ] [File]()
 
 ### Advanced Task
 
@@ -74,7 +90,7 @@ code sample
 ```
 code sample
 ```
-- [ ] [Task 1]()
+- [ ] [File]()
 
 #### [Task - 014](./filename)
 
@@ -87,11 +103,8 @@ code sample
 ```
 code sample
 ```
-- [ ] [Task 1]()
+- [ ] [File]()
 
-## What I learned from this project
-
-Add what you learned here...
 
 ## Author
 
