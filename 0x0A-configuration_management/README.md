@@ -3,9 +3,9 @@
 project description ...
 
 ## Resources
-* [name 1](https://www.1)
-* [name 2](https://www.2)
-* [name 3](https://www.3)
+* [Intro to Configuration Management](https://www.digitalocean.com/community/tutorials/an-introduction-to-configuration-management)
+* [Resource Type: file](https://www.puppet.com/docs/puppet/5.5/types/file.html#file-providers)
+
 
 ## Project Overview
 - [Mandatory Task](#mandatory-task)
@@ -85,17 +85,16 @@ root@d391259bf577:/# ./killmenow
 
 Terminal #1 - executing my manifest
 
-root@d391259bf577:/# puppet apply 2-execute_a_command.pp
-Notice: Compiled catalog for d391259bf577.hsd1.ca.comcast.net in environment production in 0.01 seconds
+imitor＠excalibur»alx-system_engineering-devops/0x0A-configuration_management(master)➜ puppet apply 2-execute_a_command.pp         (↻ 20?)
+
+Notice: Compiled catalog for excalibur in environment production in 0.02 seconds
 Notice: /Stage[main]/Main/Exec[killmenow]/returns: executed successfully
-Notice: Finished catalog run in 0.10 seconds
-root@d391259bf577:/# 
+Notice: Applied catalog in 0.03 seconds
+imitor＠excalibur»alx-system_engineering-devops/0x0A-configuration_management(master)➜   
 
 Terminal #0 - process has been terminated
-
-root@d391259bf577:/# ./killmenow
-Terminated
-root@d391259bf577:/#
+imitor＠excalibur»alx-system_engineering-devops/0x0A-configuration_management(master)➜ ./killmenow                        
+[1]    125865 terminated  ./killmenow
 ```
 - [x] [2-execute_a_command.pp](2-execute_a_command.pp)
 
