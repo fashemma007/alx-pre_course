@@ -50,7 +50,16 @@ I love Puppet%
 * Version must be `2.1.0`
 
 ```
-code sample
+imitor＠excalibur»alx-system_engineering-devops/0x0A-configuration_management(master)✗ puppet apply 1-install_a_package.pp
+Notice: Compiled catalog for excalibur in environment production in 0.22 seconds
+Notice: /Stage[main]/Main/Package[flask]/ensure: created
+Notice: Applied catalog in 2.44 seconds
+imitor＠excalibur»alx-system_engineering-devops/0x0A-configuration_management(master)➜ 
+imitor＠excalibur»~➜ flask --version                                                                                                3.10.7
+Python 3.8.16
+Flask 2.1.0
+Werkzeug 2.2.2
+imitor＠excalibur»~➜                                                                                                                3.10.7
 ```
 - [x] [1-install_a_package.pp](1-install_a_package.pp)
 
