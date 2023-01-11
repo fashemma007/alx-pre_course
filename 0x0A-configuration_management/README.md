@@ -63,45 +63,43 @@ imitor＠excalibur»~➜                                                        
 ```
 - [x] [1-install_a_package.pp](1-install_a_package.pp)
 
-#### Task
+#### 2. Execute a command
 
-**Problem:** lorem ipsum
-
-**Requirements:**
-* lorem ipsum
-* lorem ipsum
-
-```
-code sample
-```
-- [x] [Task 1](link_to_file)
-
-### Advanced Task
-
-#### Task - 013
-**Problem:** lorem ipsum
+**Problem:** Using Puppet, create a manifest that kills a process named killmenow.
 
 **Requirements:**
-* lorem ipsum
-* lorem ipsum
+* Must use the exec Puppet resource
+* Must use pkill
 
 ```
-code sample
+Terminal #0 - starting my process
+
+root@d391259bf577:/# cat killmenow
+#!/bin/bash
+while [[ true ]]
+do
+    sleep 2
+done
+
+root@d391259bf577:/# ./killmenow
+
+Terminal #1 - executing my manifest
+
+root@d391259bf577:/# puppet apply 2-execute_a_command.pp
+Notice: Compiled catalog for d391259bf577.hsd1.ca.comcast.net in environment production in 0.01 seconds
+Notice: /Stage[main]/Main/Exec[killmenow]/returns: executed successfully
+Notice: Finished catalog run in 0.10 seconds
+root@d391259bf577:/# 
+
+Terminal #0 - process has been terminated
+
+root@d391259bf577:/# ./killmenow
+Terminated
+root@d391259bf577:/#
 ```
-- [x] [Task 1](link_to_file)
+- [x] [2-execute_a_command.pp](2-execute_a_command.pp)
 
-#### Task - 014
-
-**Problem:** lorem ipsum
-
-**Requirements:**
-* lorem ipsum
-* lorem ipsum
-
-```
-code sample
-```
-- [x] [Task 1](link_to_file)
+### No Advanced Task
 
 
 ## Author
