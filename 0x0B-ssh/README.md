@@ -126,7 +126,7 @@ Notice: /Stage[main]/Main/File_line[Declare identity file]/ensure: created
 Notice: Finished catalog run in 0.03 seconds
 vagrant@ubuntu:~$
 ```
-- [ ] [100-puppet_ssh_config.pp](100-puppet_ssh_config.pp)
+- [X] [100-puppet_ssh_config.pp](100-puppet_ssh_config.pp)
 
 
 ## Author
