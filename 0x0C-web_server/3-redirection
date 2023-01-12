@@ -17,7 +17,7 @@ sudo apt install nginx -y
 
 # echo "$REDIRECT" >test_sed
 # Double quote to prevent globbing and word splitting.
-echo -en "$REDIRECT" >/etc/nginx/sites-available/default
+echo "$REDIRECT" >/etc/nginx/sites-available/default
 
 # Allow UFW firewall to receive xternal requests
 sudo ufw allow 'Nginx HTTP'
