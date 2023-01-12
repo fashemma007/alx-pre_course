@@ -36,7 +36,29 @@
 * `scp` must transfer the file to the user home directory `~/`
 * Strict host key checking must be disabled when using `scp`
 ```
-code sample
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ ./0-transfer_file 0-transfer_file 54.89.25.106          (↻ 19?⇡1)
+Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ ./0-transfer_file 0-transfer_file 54.89.25.106 ubuntu ~/.ssh/school
+0-transfer_file                                                                                           100%  707     2.2KB/s   00:00    
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ ssh ubuntu@54.89.25.106 -i ~/.ssh/school 'ls -lah ~/'   (↻ 19?⇡1)
+total 40K
+drwxr-xr-x 6 ubuntu ubuntu 4.0K Jan 12 03:06 .
+drwxr-xr-x 3 root   root   4.0K Jan 11 17:19 ..
+-rw------- 1 ubuntu ubuntu 1.1K Jan 12 03:05 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3.7K Feb 25  2020 .bashrc
+drwx------ 2 ubuntu ubuntu 4.0K Jan 11 17:19 .cache
+drwxrwxr-x 3 ubuntu ubuntu 4.0K Jan 11 17:30 .local
+-rw-r--r-- 1 ubuntu ubuntu  807 Feb 25  2020 .profile
+drwx------ 2 ubuntu ubuntu 4.0K Jan 11 17:19 .ssh
+-rw-r--r-- 1 ubuntu ubuntu    0 Jan 11 17:20 .sudo_as_admin_successful
+drwxrwxr-x 2 ubuntu ubuntu 4.0K Jan 12 03:08 web_server
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ ssh ubuntu@54.89.25.106 -i ~/.ssh/school 'ls -lah ~/web_server'
+total 12K
+drwxrwxr-x 2 ubuntu ubuntu 4.0K Jan 12 03:08 .
+drwxr-xr-x 6 ubuntu ubuntu 4.0K Jan 12 03:06 ..
+-rwxrwxr-x 1 ubuntu ubuntu  707 Jan 12 03:08 0-transfer_file
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ 
 ```
 - [x] [0-transfer_file](0-transfer_file)
 
