@@ -15,6 +15,7 @@
 - [Mandatory Task](#mandatory-task)
 	- [0. Transfer a file to your server](0-transfer_file)
 	- [1. Install nginx web server](1-install_nginx_web_server)
+	- [2. Setup a domain name](2-setup_a_domain_name)
 - [Advanced Task](#advanced-task)
 	- [Task - 013](link_to_fiel)
 	- [Task - 014](link_to_fiel)
@@ -103,18 +104,40 @@ imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜
 ```
 - [x] [1-install_nginx_web_server](1-install_nginx_web_server)
 
-#### Task
+#### 2. Setup a domain name
 
 **Problem:** lorem ipsum
 
 **Requirements:**
-* lorem ipsum
-* lorem ipsum
+* provide the domain name only (example: `foobar.tech`), no subdomain (example: `www.foobar.tech`)
+* configure your DNS records with an A entry so that your root domain points to your `web-01` IP address Warning: the propagation of your records can take time (~1-2 hours)
+* go to your profile and enter your domain in the `Project website url` field
 
 ```
-code sample
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ dig imitor.tech           (↻ 20?⇡3)
+
+; <<>> DiG 9.18.4-2ubuntu2-Ubuntu <<>> imitor.tech
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32590
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;imitor.tech.                   IN      A
+
+;; ANSWER SECTION:
+imitor.tech.            7200    IN      A       54.89.25.106
+
+;; Query time: 475 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu Jan 12 16:01:40 WAT 2023
+;; MSG SIZE  rcvd: 56
+
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ 
 ```
-- [x] [Task 1](link_to_file)
+- [x] [2-setup_a_domain_name](2-setup_a_domain_name)
 
 
 ### Advanced Task
