@@ -14,7 +14,7 @@
 ## Project Overview
 - [Mandatory Task](#mandatory-task)
 	- [0. Transfer a file to your server](0-transfer_file)
-	- [Task - 1](link_to_fiel)
+	- [1. Install nginx web server](1-install_nginx_web_server)
 - [Advanced Task](#advanced-task)
 	- [Task - 013](link_to_fiel)
 	- [Task - 014](link_to_fiel)
@@ -61,6 +61,47 @@ drwxr-xr-x 6 ubuntu ubuntu 4.0K Jan 12 03:06 ..
 imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ 
 ```
 - [x] [0-transfer_file](0-transfer_file)
+
+#### 1. Install nginx web server
+
+**Problem:** lorem ipsum
+
+**Requirements:**
+* Install `nginx` on your `web-01`
+* server
+* Nginx should be listening on port 80
+* When querying Nginx at its root `/` with a GET request (requesting a page) using `curl`, it must return a page that contains the string `Hello World!`
+* As an answer file, write a Bash script that configures a new Ubuntu machine to respect above requirements (this script will be run on the server itself)
+* You can’t use `systemctl` for restarting `nginx`
+```
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ ./0-transfer_file 1-install_nginx_web_server 54.89.25.106 ubuntu ~/.ssh/school 
+1-install_nginx_web_server                                                                                100% 1266     4.1KB/s   00:00    
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜ ssh ubuntu@54.89.25.106 -i ~/.ssh/school './1-install_nginx_web_server'
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2303 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [16.2 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1013 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [235 kB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1928 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [316 kB]
+Get:11 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [782 kB]
+Get:12 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [151 kB]
+Fetched 7081 kB in 3s (2793 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+70 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+imitor＠excalibur»alx-system_engineering-devops/0x0C-web_server(master)➜        
+```
+- [x] [1-install_nginx_web_server](1-install_nginx_web_server)
 
 #### Task
 
