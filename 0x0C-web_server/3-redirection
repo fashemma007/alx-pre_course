@@ -40,7 +40,7 @@ SERVER_CONFIG="server {
 	}
 }"
 
-echo -e '$SERVER_CONFIG' >/etc/nginx/sites-enabled/default
+echo -e "$SERVER_CONFIG" >/etc/nginx/sites-enabled/default
 
 # You can’t use systemctl for restarting nginx
 sudo service nginx restart
