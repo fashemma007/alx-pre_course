@@ -1,19 +1,9 @@
 #!/usr/bin/env bash
 # placeholder for nginx config
 
-REDIRECT="
-server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-	server_name _;
-
-	location ~/redirect_me {
-				return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-				}
-			
-	}
+REDIRECT="		if ($request_filename = ~/redirect_me){
+                        return 301 https://github.com/fashemma007;
+                }
 	"
 # Install nginx on your web-01
 sudo apt update -y
@@ -21,7 +11,10 @@ sudo apt install nginx -y
 
 # echo "$REDIRECT" >test_sed
 # Double quote to prevent globbing and word splitting.
-echo "$REDIRECT" >/etc/nginx/sites-available/default
+# echo "$REDIRECT" >/etc/nginx/sites-available/default
+
+sed -i "/^\slocation \/.*/a\ \t \t if ( = ~/redirect_me){\n \t \t \t return 301 https://github.com/fashemma007\;\n \t}
+" /etc/nginx/sites-available/default
 
 # Allow UFW firewall to receive xternal requests
 sudo ufw allow 'Nginx HTTP'
