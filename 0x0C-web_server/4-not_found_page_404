@@ -1,10 +1,28 @@
 #!/usr/bin/env bash
-# Install nginx with custom 404 page that contains the string
-# Ceci n'est pas une page.
+# Installs, configures, and starts the server
+sudo apt update -y
+sudo apt install nginx -y
 
-# Install nginx
-sudo apt update
-sudo apt install -y nginx
+# server
+## Create default nginx folder
+sudo mkdir -p /var/www/html
+
+## Create default index.html file
+sudo touch /var/www/html/index.html
+sudo touch /var/www/html/custom_404.html
+
+## Change ownership of file and directories to current user to permit edits
+sudo chown -R "$USER":"$USER" /var/www/html/index.html
+sudo chown -R "$USER":"$USER" /var/www/html/custom_404.html
+
+## Append hello world to file
+echo "Hello World!" >/var/www/html/index.html
+
+# Overwite file content
+echo "Ceci n'est pas une page" >/var/www/html/custom_404.html
+
+# Allow UFW firewall to receive xternal requests
+sudo ufw allow 'Nginx HTTP'
 
 REDIRECT="
 server {
@@ -14,9 +32,12 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 	server_name _;
 
-	location ~/redirect_me {
-				return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-				}
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	if (\$request_filename ~ redirect_me){
+		return 301 https://github.com/fashemma007;
+	}
 
 	error_page 404 /custom_404.html;
 		location /custom_404.html {
@@ -27,19 +48,6 @@ server {
 	"
 # Add custom 404 error page to nginx confg
 echo "$REDIRECT" >/etc/nginx/sites-available/default
-
-# Create default nginx folder for pages
-sudo mkdir -p /var/www/html
-sudo chmod -R 755 /var/www
-echo 'Hello World!' >/var/www/html/index.html
-# Create custom_404.html file
-sudo touch /var/www/html/custom_404.html
-
-# Change file ownership to current user to allow editing
-sudo chown -R "$USER":"$USER" /var/www/html/custom_404.html
-
-# Overwite file content
-echo "Ceci n'est pas une page" >/var/www/html/custom_404.html
 
 # Restart nginx server
 sudo service nginx restart
