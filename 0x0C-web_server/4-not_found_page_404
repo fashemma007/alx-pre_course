@@ -33,7 +33,7 @@ sudo mkdir -p /var/www/html
 sudo chmod -R 755 /var/www
 echo 'Hello World!' >/var/www/html/index.html
 # Create custom_404.html file
-sudo touch var/www/html/custom_404.html
+sudo touch /var/www/html/custom_404.html
 
 # Change file ownership to current user to allow editing
 sudo chown -R "$USER":"$USER" /var/www/html/custom_404.html
