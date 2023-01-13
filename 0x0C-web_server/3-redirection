@@ -11,7 +11,7 @@ sudo apt install nginx -y
 # Double quote to prevent globbing and word splitting.
 # echo "$REDIRECT" >/etc/nginx/sites-available/default
 
-sed -i "/^\slocation \/.*/a\ \t \t if ($request_filename = ~/redirect_me){\n \t \t \t return 301 https://github.com/fashemma007\;\n \t}
+sed -i "/^\slocation \/.*/a\ \t \t if (\$request_filename = ~/redirect_me){\n \t \t \t return 301 https://github.com/fashemma007\;\n \t}
 " /etc/nginx/sites-available/default
 
 # Allow UFW firewall to receive xternal requests
