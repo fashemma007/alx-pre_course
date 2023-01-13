@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # placeholder for nginx config
 
 # Install nginx on your web-01
