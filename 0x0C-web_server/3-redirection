@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2154
+
 # placeholder for nginx config
 
 # Install nginx on your web-01
