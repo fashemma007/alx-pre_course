@@ -4,9 +4,9 @@
 sudo apt update -y
 sudo apt install nginx -y
 
-# echo "$REDIRECT" >test_sed
-# Double quote to prevent globbing and word splitting.
-# echo "$REDIRECT" >/etc/nginx/sites-available/default
+mkdir -p /var/www/html/
+sudo chmod -R 755 /var/www
+echo 'Hello World!' >/var/www/html/index.html
 
 sed -i s/"location \/ {"/"location \/redirect_me {\n \t \t \t return 301 https:\/\/github.com\/fashemma007;"/g /etc/nginx/sites-available/default
 
