@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # run apache on holbertonschool/265-0 container
-
-sed -i s/"#ServerName www.example.com"/"ServerName localhost"/g /etc/apache2.conf
+# uncomment the server name property
+sed -i s/"#ServerName www.example.com"/"ServerName localhost"/g /etc/apache2/apache2.conf
+# restart the web-server
 service apache2 restart
