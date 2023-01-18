@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+REDIRECT="
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+
+	location / {
+		# create custom header for the server
+		add_header X-Served-By $(hostname -a);
+		try_files \$uri \$uri/ =404;
+	}
+	if (\$request_filename ~ redirect_me){
+		return 301 https://github.com/fashemma007;
+	}
+
+	error_page 404 /custom_404.html;
+		location /custom_404.html {
+				root /var/www/html;
+				internal;
+		}
+	}
+	"
+# Add custom 404 error page to nginx confg
+echo "$REDIRECT" >/etc/nginx/sites-available/default
+
+# Restart nginx server
+sudo service nginx restart
