@@ -33,6 +33,8 @@ server {
 	server_name _;
 
 	location / {
+		# create custom header for the server
+		add_header X-Served-By $(hostname -a);
 		try_files \$uri \$uri/ =404;
 	}
 	if (\$request_filename ~ redirect_me){
