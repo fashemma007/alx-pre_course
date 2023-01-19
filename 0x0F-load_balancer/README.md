@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">0x0F. Load balancer</h1>
+<h1 style="text-align: center;"><a href='https://intranet.alxswe.com/projects/275'>0x0F. Load balancer</a></h1>
 
 You have been given 2 additional servers:
 	* gc-[STUDENT_ID]-web-02-XXXXXXXXXX
@@ -18,7 +18,7 @@ For this project, you will need to write Bash scripts to automate your work. All
 
 - [**Mandatory Task**](#mandatory-task)
 	- [0. Double the number of webservers](link_to_file)
-	- [Task - 1](link_to_file)
+	- [1. Install your load balancer](1-install_load_balancer)
 - [**Advanced Task**](#advanced-task)
 	- [Task - 013](link_to_file)
 	- [Task - 014](link_to_file)
@@ -36,11 +36,6 @@ For this project, you will need to write Bash scripts to automate your work. All
 
 Since we’re placing our web servers behind a load balancer for this project, we want to add a custom Nginx response header. The goal here is to be able to track which web server is answering our HTTP requests, to understand and track the way a load balancer works. More in the coming tasks.
 
-
-
-**Requirements:**
-* lorem ipsum
-* lorem ipsum
 
 ```
 imitor＠excalibur»~➜ curl -I 54.89.25.106
@@ -68,22 +63,44 @@ X-Served-By: 74003-web-02
 Accept-Ranges: bytes
 
 ```
-- [ ] *File:* [Task 0](link_to_file)
+- [x] *File:* [Task 0](link_to_file)
 
 ---
 
-#### Task
+#### 1. Install your load balancer
 
-**Problem:** lorem ipsum
+**Problem:** Install and configure HAproxy on your `lb-01` server.
 
 **Requirements:**
-* lorem ipsum
-* lorem ipsum
+* Configure HAproxy so that it send traffic to `web-01` and `web-02`
+* Distribute requests using a roundrobin algorithm
+* Make sure that HAproxy can be managed via an init script
+* Make sure that your servers are configured with the right hostnames: `[STUDENT_ID]-web-01` and `[STUDENT_ID]-web-02`. If not, follow this tutorial.
+* For your answer file, write a Bash script that configures a new Ubuntu machine to respect above requirements
+```
+imitor＠excalibur»alx-system_engineering-devops/0x0F-load_balancer(master)➜ curl -I 34.202.158.44                                 (↻ 1?⇡3)
+HTTP/1.1 200 OK
+server: nginx/1.18.0 (Ubuntu)
+date: Thu, 19 Jan 2023 01:30:44 GMT
+content-type: text/html
+content-length: 13
+last-modified: Wed, 18 Jan 2023 16:16:03 GMT
+etag: "63c81b43-d"
+x-served-by: 74003-web-02
+accept-ranges: bytes
 
+imitor＠excalibur»alx-system_engineering-devops/0x0F-load_balancer(master)➜ curl -I 34.202.158.44                                 (↻ 1?⇡3)
+HTTP/1.1 200 OK
+server: nginx/1.18.0 (Ubuntu)
+date: Thu, 19 Jan 2023 01:30:49 GMT
+content-type: text/html
+content-length: 13
+last-modified: Wed, 18 Jan 2023 16:30:32 GMT
+etag: "63c81ea8-d"
+x-served-by: 74003-web-01
+accept-ranges: bytes
 ```
-code sample
-```
-- [ ] *File:* [Task 1](link_to_file)
+- [x] *File:* [1-install_load_balancer](1-install_load_balancer)
 
 
 ---
