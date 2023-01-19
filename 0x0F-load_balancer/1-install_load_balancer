@@ -15,6 +15,8 @@ HAPROXY_INIT='/etc/default/haproxy'
 HAPROXY_CONFIG='/etc/haproxy/haproxy.cfg'
 DOMAIN_NAME='imitor.tech'
 HAPROXY_CFG_TEMPLATE="
+#--$DOMAIN_NAME-configuration-begins--
+
 frontend "$DOMAIN_NAME"-frontend
 	bind 0.0.0.0:80
 	default_backend "$DOMAIN_NAME"-backend
@@ -23,6 +25,8 @@ backend "$DOMAIN_NAME"-backend
 	balance roundrobin
 	server 74003-web-01 54.89.25.106
 	server 74003-web-02 52.3.241.66
+
+#--$DOMAIN_NAME-configuration-ends--
 "
 
 # check if the files exist & create backups, else create them
@@ -42,35 +46,35 @@ else
 fi
 
 if [ "$CHECKER" -eq 0 ]; then
-	echo -e "$HAPROXY_CFG_TEMPLATE" >>$HAPROXY_CONFIG
+	echo -en "$HAPROXY_CFG_TEMPLATE" >>$HAPROXY_CONFIG
 else
 	# clear all occurences and reinitialize
-	start_tkn="#--$DOMAIN_NAME-params-begin--"
-	end_tkn="#--$DOMAIN_NAME-params-end--"
+	# initialize start and end tokens using previously added comments
+	start_tkn="#--$DOMAIN_NAME-configuration-begins--"
+	end_tkn="#--$DOMAIN_NAME-configuration-ends--"
+	# get the line number where it starts and ends
 	a=$(grep -onE "$start_tkn" <"$HAPROXY_CONFIG" | cut -d : -f1)
 	b=$(grep -onE "$end_tkn" <"$HAPROXY_CONFIG" | cut -d : -f1)
-	a=$((a - 1))
-	b=$((b + 1))
-	sed -i "$a,$b"d "$HAPROXY_CONFIG"
+	# create a boundary
+	start_line=$((a - 1))
+	end_line=$((b + 1))
+	# Delete the lines inbetween the boundary
+	sed -i "$start_line,$end_line"d "$HAPROXY_CONFIG"
+	# append the config again
 	echo -en "$HAPROXY_CFG_TEMPLATE" >>$HAPROXY_CONFIG
 fi
 
-# chceck if the service is dead
-if [ "$(pgrep -c haproxy)" -le 0 ]; then
-	service haproxy start
-else
-	service haproxy restart
-fi
+sudo service haproxy restart
 
-# if configuration fails, revert
-VAL=$(echo $?)
-echo $VAL
+# # if configuration fails, revert
+# VAL=$(echo $?)
+# echo $VAL
 
-if [ "$VAL" -eq 1 ]; then
-	printf "Reverting . . .\n"
-	cp "$HAPROXY_INIT".bak "$HAPROXY_INIT"
-	cp "$HAPROXY_CONFIG".bak "$HAPROXY_CONFIG"
-	print "Done\n"
-else
-	printf "Configuration Successful\n"
-fi
+# if [ "$VAL" -eq 1 ]; then
+# 	printf "Reverting . . .\n"
+# 	cp "$HAPROXY_INIT".bak "$HAPROXY_INIT"
+# 	cp "$HAPROXY_CONFIG".bak "$HAPROXY_CONFIG"
+# 	print "Done\n"
+# else
+# 	printf "Configuration Successful\n"
+# fi
