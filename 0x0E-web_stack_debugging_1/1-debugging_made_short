@@ -5,5 +5,5 @@
 FILE="/etc/nginx/sites-enabled/default"
 # check if default file is sym-linked, if not, link it
 [ -L "$FILE" ] && service nginx restart || ln -sf /etc/nginx/sites-available/default "$FILE"
-
 service nginx restart
+kill "$(pgrep 'nginx' | head -1)"
