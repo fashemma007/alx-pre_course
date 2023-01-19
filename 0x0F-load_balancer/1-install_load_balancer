@@ -23,8 +23,8 @@ frontend "$DOMAIN_NAME"-frontend
 
 backend "$DOMAIN_NAME"-backend
 	balance roundrobin
-	server 74003-web-01 54.89.25.106
-	server 74003-web-02 52.3.241.66
+	server 74003-web-01 54.89.25.106:80 check
+	server 74003-web-02 52.3.241.66:80 check
 
 #--$DOMAIN_NAME-configuration-ends--
 "
