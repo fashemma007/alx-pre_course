@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# script that configures a server so Nginx must be running, and listening on port 80 of all the server’s active IPv4 IPs
+
+# break in sym-link btwn /etc/nginx/sites-available/default && /etc/nginx/sites-enabled/default
+FILE="/etc/nginx/sites-enabled/default"
+# check if default file is sym-linked, if not, link it
+[ -L "$FILE" ] && service nginx restart || ln -sf /etc/nginx/sites-available/default "$FILE"
+
+service nginx restart
