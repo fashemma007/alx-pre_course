@@ -1,31 +1,8 @@
 #!/usr/bin/env bash
 # Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02
-REDIRECT="
-server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-	server_name _;
 
-	location / {
-		# create custom header for the server
-		add_header X-Served-By $(hostname -a);
-		try_files \$uri \$uri/ =404;
-	}
-	if (\$request_filename ~ redirect_me){
-		return 301 https://github.com/fashemma007;
-	}
-
-	error_page 404 /custom_404.html;
-		location /custom_404.html {
-				root /var/www/html;
-				internal;
-		}
-	}
-	"
-# Add custom 404 error page to nginx confg
-echo "$REDIRECT" >/etc/nginx/sites-available/default
-
-# Restart nginx server
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install nginx -y
+sed -i "/listen 80 default_server/i add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx restart
