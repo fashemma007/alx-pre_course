@@ -4,6 +4,9 @@
 # break in sym-link btwn /etc/nginx/sites-available/default && /etc/nginx/sites-enabled/default
 FILE="/etc/nginx/sites-enabled/default"
 # check if default file is sym-linked, if not, link it
-[ -L "$FILE" ] && service nginx restart || ln -sf /etc/nginx/sites-available/default "$FILE"
-
-service nginx restart
+if [[ -L "$FILE" ]]; then
+	service nginx restart
+else
+	ln -sf /etc/nginx/sites-available/default "$FILE"
+	service nginx restart
+fi
