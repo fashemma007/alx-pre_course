@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+StdName=$1
+
+# -n returns True when string is not empty or not null
+get_name() {
+	if [[ -n $StdName ]]; then
+		echo "Hello $StdName"
+	else
+		echo "Please enter a namne"
+		read StdName
+		get_name StdName
+	fi
+}
+
+# -z returns True when string is empty or null
+getName() {
+	if [[ -z $StdName ]]; then
+		echo "Tu nombre es ?"
+		read StdName
+		get_name StdName
+	else
+		echo "Holla $StdName, buenos dias"
+	fi
+}
+
+get_name StdName
+getName StdName
