@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Run whoami as a different user using root
+USER=$1
+sudo -u $USER whoami
