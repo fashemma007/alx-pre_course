@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+echo "CREATE DATABASE tyrell_corp;
+		GRANT SELECT ON tyrell_corp.* TO 'holberton_user'@'localhost';
+		CREATE TABLE tyrell_corp.nexus6 (id INTEGER, name VARCHAR(50));
+		INSERT INTO tyrell_corp.nexus6(id, name) value(1, 'Emmanuel');
+" | mysql -uroot -p
