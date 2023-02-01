@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# run nginx as nginx user
+# kill apache2 service
+sudo pkill apache2
+# change ownership of config file and permissions
+sudo chown nginx:nginx /etc/nginx/nginx.conf
+sudo chmod 777 /etc/nginx/nginx.conf
+# make nginx default user nginx in config file
+sudo sed -i '1i user nginx;' /etc/nginx/nginx.conf
+# cahnge nginx from listening on 80 to 8080
+sudo sed -i 's/80 default/8080 default/' /etc/nginx/sites-available/default
+# restart service as user nginx
+sudo -u nginx service nginx restart
