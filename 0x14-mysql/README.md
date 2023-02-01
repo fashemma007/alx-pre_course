@@ -6,6 +6,9 @@
 
 Setting Up MYSQL servers on web servers
 
+For ease, I simply copied the files where I already had the commands written in
+to both webservers and executed them.
+
 ## Resources
 * [What is a Database](https://www.techtarget.com/searchdatamanagement/definition/database)
 * [MYSQL Replication](https://www.digitalocean.com/community/tutorials/how-to-choose-a-redundancy-plan-to-ensure-high-availability#sql-replication)
@@ -19,6 +22,8 @@ Setting Up MYSQL servers on web servers
 	- [0. Install MySQL](install_mysql_5_7)
 	- [1. Let us in!](create_users)
 	- [2. If only you could see what I've seen with your eyes](prepare_for_repl)
+	- [3. Quite an experience to live in fear, isn't it?](user_replica)
+	- [4. Setup a Primary-Replica infrastructure using MySQL](4-mysql_configuration_replica)
 	- [_file_](link_to_file)
 	- [_file_](link_to_file)
 - [**Advanced Task**](#advanced-task)
@@ -26,8 +31,6 @@ Setting Up MYSQL servers on web servers
 	- [Task_014](link_to_file)
 
 ---
-
-
 
 <h2 style="text-align: center;">Tasks</h2>
 
@@ -91,28 +94,37 @@ ubuntu@74003-web-01:~$
 
 ---
 
-#### task_
+#### 3. Quite an experience to live in fear, isn't it?
 
-**Problem:** 
+**Problem:** Before you get started with your primary-replica synchronization, you need one more thing in place. On your primary MySQL server (web-01), create a new user for the replica server.
 
 **Requirements:**
-* 
+* The name of the new user should be `replica_user`, with the host name set to `%`, and can have whatever password you’d like.
+* `replica_user` must have the appropriate permissions to replicate your primary MySQL server.
+* `holberton_user` will need SELECT privileges on the `mysql.user` table in order to check that `replica_user` was created with the correct permissions.
 
 ```
+ubuntu@74003-web-01:~$ ./user_replica 
+Enter password: 
+ubuntu@74003-web-01:~$ mysql -uholberton_user -p -e 'SELECT user, Repl_slave_priv FROM mysql.user'
+Enter password: 
++----------------+-----------------+
+| user           | Repl_slave_priv |
++----------------+-----------------+
+| root           | Y               |
+| mysql.session  | N               |
+| mysql.sys      | N               |
+| holberton_user | N               |
+| replica_user   | Y               |
++----------------+-----------------+
+ubuntu@74003-web-01:~$ 
 ```
-- [x] *File:* [file](file)
+- [x] *File:* [user_replica](user_replica)
 
 ---
-#### task_
+#### 4. Setup a Primary-Replica infrastructure using MySQL
 
-**Problem:** 
-
-**Requirements:**
-* 
-
-```
-```
-- [x] *File:* [file](file)
+- [x] *Files:* [4-mysql_configuration_primary](4-mysql_configuration_primary),[4-mysql_configuration_replica](4-mysql_configuration_replica)
 
 ---
 #### task_
