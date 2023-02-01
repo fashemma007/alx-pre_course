@@ -13,8 +13,8 @@ The user `root` is, on Linux, the “superuser”. It can do anything it wants, 
 	- [0. Run software as another user](0-iamsomeoneelse)
 	- [1. Run Nginx as Nginx](1-run_nginx_as_nginx)
 - [**Advanced Task**](#advanced-task)
-	- [Task_013](link_to_file)
-	- [Task_014](link_to_file)
+	- [2. 7 lines or less](100-fix_in_7_lines_or_less)
+
 
 ---
 
@@ -55,45 +55,28 @@ Fix this container so that Nginx is running as the `nginx` user.
 * `nginx` must be listening on all active IPs on port `8080`
 * You cannot use `apt-get remove`
 * Write a Bash script that configures the container to fit the above requirements
-```
-code sample
-```
-- [ ] *File:* [1-run_nginx_as_nginx](1-run_nginx_as_nginx)
 
+- [x] *File:* [1-run_nginx_as_nginx](1-run_nginx_as_nginx)
 
 ---
 
 ### Advanced Task
 
 ---
-#### Task_013
-**Problem:** lorem ipsum
+#### 2. 7 lines or less
+**Problem:** Using what you did for task #1, make your fix short and sweet.
 
 **Requirements:**
-* lorem ipsum
-* lorem ipsum
+* Your Bash script must be 7 lines long or less
+* There must be a new line at the end of the file
+* You respect Bash script requirements
+* You cannot use `;`, `&&` or `wget`
+* You cannot execute your previous answer file (Do not include the name of the previous script in this one)
 
-```
-code sample
-```
-- [ ] *File:* [Task_13](link_to_file)
+- [ ] *File:* [100-fix_in_7_lines_or_less](100-fix_in_7_lines_or_less)
 
 ---
 
-#### Task_014
-
-**Problem:** lorem ipsum
-
-**Requirements:**
-* lorem ipsum
-* lorem ipsum
-
-```
-code sample
-```
-- [ ] *File:* [Task_14](link_to_file)
-
----
 
 <h2 style="text-align: center;">Collaborative Author(s)</h2>
 
