@@ -24,11 +24,7 @@ to both webservers and executed them.
 	- [2. If only you could see what I've seen with your eyes](prepare_for_repl)
 	- [3. Quite an experience to live in fear, isn't it?](user_replica)
 	- [4. Setup a Primary-Replica infrastructure using MySQL](4-mysql_configuration_replica)
-	- [_file_](link_to_file)
-	- [_file_](link_to_file)
-- [**Advanced Task**](#advanced-task)
-	- [Task_013](link_to_file)
-	- [Task_014](link_to_file)
+	- [5. MySQL backup](5-mysql_backup)
 
 ---
 
@@ -127,48 +123,25 @@ ubuntu@74003-web-01:~$
 - [x] *Files:* [4-mysql_configuration_primary](4-mysql_configuration_primary),[4-mysql_configuration_replica](4-mysql_configuration_replica)
 
 ---
-#### task_
+#### 5. MySQL backup
 
-**Problem:** 
-
-**Requirements:**
-* 
-
-```
-```
-- [x] *File:* [file](file)
-
----
-
-### Advanced Task
-
----
-#### Task_013
-**Problem:** lorem ipsum
+**Problem:** Write a Bash script that generates a MySQL dump and creates a compressed archive out of it.
 
 **Requirements:**
-* lorem ipsum
-* lorem ipsum
+* The MySQL dump must contain all your MySQL databases
+* The MySQL dump must be named `backup.sql`
+* The MySQL dump file has to be compressed to a `tar.gz` archive
+* This archive must have the following name format: `day-month-year.tar.gz`
+* The user to connect to the MySQL database must be `root`
+* The Bash script accepts one argument that is the password used to connect to the MySQL database
 
 ```
-code sample
+ubuntu@74003-web-01:~$ ./5-mysql_backup root
+mysqldump: [Warning] Using a password on the command line interface can be insecure.
+ubuntu@74003-web-01:~$ file 01-02-2023.tar.gz 
+01-02-2023.tar.gz: gzip compressed data, from Unix, original size modulo 2^32 890880
 ```
-- [ ] *File:* [Task_13](link_to_file)
-
----
-
-#### Task_014
-
-**Problem:** lorem ipsum
-
-**Requirements:**
-* lorem ipsum
-* lorem ipsum
-
-```
-code sample
-```
-- [ ] *File:* [Task_14](link_to_file)
+- [x] *File:* [5-mysql_backup](5-mysql_backup)
 
 ---
 
