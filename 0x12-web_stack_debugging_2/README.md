@@ -19,6 +19,7 @@ The user `root` is, on Linux, the “superuser”. It can do anything it wants, 
 ---
 
 <h2 style="text-align: center;">Tasks</h2>
+
 ### Mandatory Task
 #### 0. Run software as another user
 
