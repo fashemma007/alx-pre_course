@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-# Run whoami as a different user using root
-USER=$1
-sudo -H -u $USER bash -c 'whoami'
+# run whoami as a different user using root
+sudo -H -u "$1" bash -c 'whoami'
