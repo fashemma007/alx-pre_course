@@ -24,7 +24,7 @@ if __name__ == "__main__":
         # === writing list of dicts to csv ===
         todo_dict = {}
         todo_dict['USER_ID'] = argv[1]
-        todo_dict['USERNAME'] = user_dits.get("username")
+        todo_dict['USERNAME'] = user_dits.get("name")
         todo_dict['TASK_COMPLETED_STATUS'] = todo.get("completed")
         todo_dict['TASK_TITLE'] = todo.get("title")
         todos.append(todo_dict)
@@ -32,7 +32,7 @@ if __name__ == "__main__":
         # === writing nested lists to csv ===
         # tudus = []
         # tudus.append(argv[1])
-        # tudus.append(user_dits.get("username"))
+        # tudus.append(user_dits.get("name"))
         # tudus.append(todo.get("completed"))
         # tudus.append(todo.get("title"))
         # todo_list.append(tudus)
