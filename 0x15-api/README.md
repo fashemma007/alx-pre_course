@@ -8,6 +8,8 @@
 
 - [**Mandatory Task**](#mandatory-task)
 	- [0. Gather data from an API](0-gather_data_from_an_API.py)
+	- [1. Export to CSV](1-export_to_CSV.py)
+	- [Task_1](link_to_file)
 	- [Task_1](link_to_file)
 - [**Advanced Task**](#advanced-task)
 	- [Task_013](link_to_file)
@@ -55,19 +57,15 @@ TStemporeSmolestiasSdoloresSrerumSsequiSvoluptatesSipsumSconsequatur
 
 ---
 
-#### Task_1
+#### 1. Export to CSV
 
-**Problem:** 
+**Problem:** Using what you did in the task #0, extend your Python script to export data in the CSV format.
 
 **Requirements:**
-* lorem_ipso
-* lorem_ipso
-
-```
-code sample
-```
-- [ ] *File:* [Task_1](link_to_file)
-
+* Records all tasks that are owned by this employee
+* Format must be: `"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"`
+* File name must be: `USER_ID.csv`
+- [x] *File:* [1-export_to_CSV.py](1-export_to_CSV.py)
 
 ---
 
