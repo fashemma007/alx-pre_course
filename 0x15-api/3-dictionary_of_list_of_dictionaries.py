@@ -12,15 +12,15 @@ if __name__ == "__main__":
     users_url = site_url + "/users"
     user_dits = get(users_url).json()
     # print(user_dits)
-    todos = []
     json_dict = {}
     for user in user_dits:
         user_id = user.get('id')
+        todos = []
+        # print(user_id)
         # get user's todos
         todos_url = site_url + "/user/{}/todos".format(user_id)
         user_todo = get(todos_url).json()
         for todo in user_todo:
-            # === writing list of dicts to csv ===
             user_dict = {}
             user_dict['username'] = user.get("username")
             user_dict['task'] = todo.get("title")
