@@ -3,7 +3,7 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], at=0):
+def recurse(subreddit, hot_list=[], at=None):
     """ function to get top hot posts
 
     Args:
@@ -21,6 +21,8 @@ def recurse(subreddit, hot_list=[], at=0):
     # using loops, sytanx would be:
     # [print(child.get('data').get('title')) for child in children]
     length = len(children)
+    if at is None:
+        at = 0
     title = children[at].get('data').get('title')
     if (resp.json().get('error') == 404):
         return None
