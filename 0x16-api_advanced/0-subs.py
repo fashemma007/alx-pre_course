@@ -6,7 +6,7 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """returns the number if subscribers to a subreddit
+    """returns the number of subscribers to a subreddit
     or 0 if invalid
     @param subreddit(str): the subreddit to query
     """
