@@ -1,3 +1,4 @@
+# identify bug using strace
 $doc_root = '/var/www/html'
 
 file { $doc_root:
