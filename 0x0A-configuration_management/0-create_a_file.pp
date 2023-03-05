@@ -3,6 +3,7 @@ $file = '/tmp/school'
 
 #create doc root directory
 file { $file:
+  ensure  => 'present',
   owner   => 'www-data',
   group   => 'www-data',
   mode    => '0744',
