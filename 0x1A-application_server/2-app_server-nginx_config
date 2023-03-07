@@ -1,0 +1,32 @@
+server {
+	listen 80 default_server;
+	add_header X-Served-By $HOSTNAME;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+
+	location /airbnb-onepage {
+		include proxy_params;
+		proxy_pass http://unix:/home/ubuntu/web_server/AirBnB_clone_v2/alx_hello.sock;
+	}
+
+	location /hbnb_static {
+		alias /data/web_static/current/;
+	}
+
+	location /g {
+		alias /var/www/html/bye;
+		#alias /var/www/html/hello/index.html
+		# create custom header for the server
+		try_files $uri $uri/ =404;
+	}
+	if ($request_filename ~ redirect_me){
+		return 301 https://github.com/fashemma007;
+	}
+	error_page 404 /custom_404.html;
+	location /custom_404.html {
+		root /var/www/html;
+		internal;
+	}
+}
