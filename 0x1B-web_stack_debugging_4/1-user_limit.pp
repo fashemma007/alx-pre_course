@@ -7,5 +7,5 @@ exec {'hard_limit':
 exec {'soft_limit':
   command => "sed -i 's/holberton soft.*/holberton soft nofile 10000/' /etc/security/limits.conf",
   path    => '/usr/bin/:/usr/local/bin/:/bin/',
-  require => Exec["hard_limit"]
+  require => Exec['hard_limit']
 }

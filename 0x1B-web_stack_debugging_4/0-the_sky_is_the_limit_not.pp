@@ -6,7 +6,7 @@ exec {'nginx limit':
   path    => '/usr/bin/:/usr/local/bin/:/bin/'
 }
 exec {'restart nginx':
-  command => "sudo service nginx restart",
+  command => 'sudo service nginx restart',
   path    => '/usr/bin/:/usr/local/bin/:/bin/',
-  require => Exec["nginx limit"]
+  require => Exec['nginx limit']
 }
